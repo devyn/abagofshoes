@@ -48,10 +48,12 @@ Shoes.app(:title => "Guess my Number", :height=> 100, :width => 490, :resizable 
         @editfield = edit_line
         @guess_button = button("Guess") do
           match = /[0-9]+/.match(@editfield.text)
+          @editfield.text = ""
           if match
-            case @game.guess(match[0].to_i)
+            guessed = match[0].to_i
+            case @game.guess(guessed)
             when -1
-              @message.replace("Nope, sorry. My number is bigger than that!")
+              @message.replace("Nope, sorry. My number is bigger than #{guessed}!")
             when 0
               @message.replace("Awww, you won! Took you only #{@game.guesses} guesses. Thanks for playing!")
               @newgame_button_slot.clear do
@@ -62,7 +64,7 @@ Shoes.app(:title => "Guess my Number", :height=> 100, :width => 490, :resizable 
                 end
               end
             when 1
-              @message.replace("Nah, my number isn't that big!")
+              @message.replace("Nah, my number isn't as big as #{guessed}!")
             end
           else
             @message.replace("Huh? That's not a number.")
