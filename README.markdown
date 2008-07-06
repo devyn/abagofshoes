@@ -28,6 +28,12 @@ If it lies and says it works but it isn't working, then something really is wron
 
 # Bag contents:
 
+## Guess My Number
+
+It's a game! Try to guess a number from 1 to 100. The only help you get is the computer telling you if the number you entered is too low or too high.
+
+[![preview](http://img.skitch.com/20080706-b86fiu51kpnhcwny44t2u83cn5.preview.png)](http://img.skitch.com/20080706-b86fiu51kpnhcwny44t2u83cn5.png)
+
 ## HotShoes
 
 Displays the latest messages from the Shoes mailing list by using the gmane.org RSS feed
