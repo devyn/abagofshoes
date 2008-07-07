@@ -28,6 +28,10 @@ If it lies and says it works but it isn't working, then something really is wron
 
 # Bag contents:
 
+## Chatlog Viewer
+
+Displays aMSN and Mercury chatlogs. Can also convert them to a nicely formatted HTML file.
+
 ## Guess My Number
 
 It's a game! Try to guess a number from 1 to 100. The only help you get is the computer telling you if the number you entered is too low or too high.
