@@ -137,9 +137,7 @@ Shoes.app do
           if pictures = @game.next_round
             @pics.clear do
               pictures.each do |pic|
-                Thread.start do
-                  image pic
-                end
+                image pic
               end
             end
           else
@@ -155,9 +153,7 @@ Shoes.app do
     @pics = flow do
       pictures = @game.next_round
       pictures.each do |pic|
-        #Thread.start do
-          image pic
-        #end
+        image pic
       end
     end
     
