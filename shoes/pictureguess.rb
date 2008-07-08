@@ -16,7 +16,7 @@
 #
 # Status:
 # -------
-# Not working, in development
+# In development, but most stuff works
 
 require 'rexml/document'
 require 'open-uri'
