@@ -22,6 +22,11 @@ require 'rexml/document'
 require 'open-uri'
 
 class PictureGame
+  attr_reader :score
+  attr_reader :total_score
+  attr_reader :round
+  attr_reader :rounds
+  attr_reader :guesses
   
   # rounds = how many rounds to play
   def initialize(rounds)
@@ -113,7 +118,7 @@ class PictureGame
       @total_score += @score
       return true
     else
-      @score -= 100
+      @score -= 200
       @guesses += 1
       return false
     end
@@ -147,7 +152,10 @@ Shoes.app do
         else
           alert("Nope, sorry. That's not the right word. Try again!")
         end
+        @scoreinfo.replace("Score: #{@game.total_score} - Round: #{@game.round} / #{@game.rounds} - Guess: #{@game.guesses} / 5")
       end
+      
+      @scoreinfo = para "Score: #{@game.total_score} - Round: #{@game.round} / #{@game.rounds} - Guess: #{@game.guesses} / 5", :stroke => orange
     end
     
     @pics = flow do
