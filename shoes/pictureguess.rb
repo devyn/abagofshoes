@@ -100,7 +100,7 @@ class PictureGame
     
       return pictures
     else
-      return nil # if the game is over
+      return false # if the game is over
     end
   end
   
@@ -144,6 +144,7 @@ Shoes.app do
             end
           else
             # game is over, show total points and stuff
+            alert("Game over! Thanks for playing!")
           end
         else
           alert("Nope, sorry. That's not the right word. Try again!")
@@ -154,9 +155,9 @@ Shoes.app do
     @pics = flow do
       pictures = @game.next_round
       pictures.each do |pic|
-        Thread.start do
+        #Thread.start do
           image pic
-        end
+        #end
       end
     end
     
