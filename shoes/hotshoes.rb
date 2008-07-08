@@ -59,6 +59,11 @@ Shoes.app do
                 stack(:margin_left => 15, :margin_right => 15, :margin_top => 15) do
                   background white
                   stack(:margin_left => 15, :margin_right => 15, :margin_top => 15) do
+                    flow do
+                      para item[count][:creator], :stroke => red
+                      para " - "
+                      para item[count][:date], :stroke => orange
+                    end
                     para item[count][:description]
                     click do
                       visit(item[count][:link])
