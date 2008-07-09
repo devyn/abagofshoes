@@ -95,12 +95,12 @@ class PictureGame
     
       # Important!!!: If you use this code to make a new application, you have to get your own Flickr API Key, you are not allowed to use this one, because each application needs it's own API key.
       # You can get a Flickr API key for free and instantly by logging in to Flickr with your Flickr account and visiting the site: http://www.flickr.com/services/api/keys/
-      doc = REXML::Document.new open("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=30358eb0314dedf2b990f925d6fcd2b4&media=photos&per_page=25&tags=#{@searchword}").read
+      doc = REXML::Document.new open("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=30358eb0314dedf2b990f925d6fcd2b4&media=photos&per_page=48&tags=#{@searchword}").read
     
       # building an array with pictures out of the informations from the XML file
       pictures = []
       doc.elements.each("rsp/photos/photo") do |photo|
-        pictures << "http://farm#{photo.attributes["farm"]}.static.flickr.com/#{photo.attributes["server"]}/#{photo.attributes["id"]}_#{photo.attributes["secret"]}_t.jpg"
+        pictures << "http://farm#{photo.attributes["farm"]}.static.flickr.com/#{photo.attributes["server"]}/#{photo.attributes["id"]}_#{photo.attributes["secret"]}_s.jpg"
       end
     
       return pictures
