@@ -48,6 +48,12 @@ Displays the latest messages from the Shoes mailing list by using the gmane.org 
 
 A game where a random word is sent to Flickr and you get a bunch of pictures displayed, which are tagged with the random word. You then have to guess what the word used was.
 
+## Tubular Shoes
+
+Easily download YouTube videos
+
+[![preview](http://img.skitch.com/20080711-xcm8fpyy4cc28tnha3aaj8fj33.preview.png)](http://img.skitch.com/20080711-xcm8fpyy4cc28tnha3aaj8fj33.png)
+
 ## Twitterfind
 
 Let's you search for Twitter messages by using summize.com
