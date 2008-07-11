@@ -17,7 +17,7 @@ require 'net/http'
 Shoes.app(:title => "TubularShoes", :width => 590, :height => 130, :resizable => false) do
   background black
   
-  @newprogress = 0
+  @newprogress = 0.0
   
   # helper functions
   
@@ -103,7 +103,7 @@ Shoes.app(:title => "TubularShoes", :width => 590, :height => 130, :resizable =>
           filename = @searchbox.text.split("=")[1] + ".flv"
           Thread.start do
             download(URI.parse(file_url), filename)
-            @status_bar.fraction = 0.0
+            @newprogress = 0.0
           end
         }
       end
