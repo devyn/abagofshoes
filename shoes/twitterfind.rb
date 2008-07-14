@@ -33,7 +33,7 @@ Shoes.app(:title => "Twitterfind", :width => 545) do
   # message and you don't have to wait at all, so hopefully threading will work
   # in a future version
   def getTwitters(searchTerm)
-    # manual html encoding of whitespaces until I figure out why Shoes doesn't like Ruby CGI
+    # url encoding the searchterm
     searchTerm = CGI::escape(searchTerm)
     
     # grabbing the search results for the given searchTerm from summize as a REXML document
