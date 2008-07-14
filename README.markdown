@@ -44,6 +44,12 @@ Displays the latest messages from the Shoes mailing list by using the gmane.org 
 
 [![preview](http://img.skitch.com/20080705-b4nxbgxjyn6se4pmg5f9krf55h.preview.png)](http://img.skitch.com/20080705-b4nxbgxjyn6se4pmg5f9krf55h.png)
 
+## LUFThelper
+
+Helper utility for developing AIR(+HTML/CSS/JavaScript) apps
+
+[![preview](http://img.skitch.com/20080714-brr5b6x44n5mnu9shxxu83n3pb.preview.png)](http://img.skitch.com/20080714-brr5b6x44n5mnu9shxxu83n3pb.png)
+
 ## Picture Guess
 
 A game where a random word is sent to Flickr and you get a bunch of pictures displayed, which are tagged with the random word. You then have to guess what the word used was.
