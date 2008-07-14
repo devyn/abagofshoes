@@ -14,6 +14,7 @@
 
 require "rexml/document"
 require "open-uri"
+require 'cgi'
 
 Shoes.app(:title => "Twitterfind", :width => 545) do
   @content = nil
@@ -33,7 +34,7 @@ Shoes.app(:title => "Twitterfind", :width => 545) do
   # in a future version
   def getTwitters(searchTerm)
     # manual html encoding of whitespaces until I figure out why Shoes doesn't like Ruby CGI
-    searchTerm = searchTerm.gsub(" ", "%20")
+    searchTerm = CGI::escape(searchTerm)
     
     # grabbing the search results for the given searchTerm from summize as a REXML document
     doc = REXML::Document.new open("http://summize.com/search.atom?lang=en&rpp=100&q=#{searchTerm}").read
