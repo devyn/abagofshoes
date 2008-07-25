@@ -8,7 +8,7 @@
 #
 # Status:
 # -------
-# Working, but crashes often, threading doesn't work so it's deactivated,
+# Working, but crashes when pictures are loading while starting another search,
 # a few features are missing, and text is sometimes too big for the box
 # it's being displayed in
 
@@ -21,17 +21,9 @@ Shoes.app(:title => "Twitterfind", :width => 545) do
   
   background "#363636"
   
-  # Had to put this into a function or Shoes would crash. Also, the function
-  # has to be inside the Shoes.app() {} block or otherwise, it doesn't work
-  #
   # Fetches search results from summize.com as an Atom XML file,
   # parses the XML and displays an image and the Twitter message
   # for every entry.
-  #
-  # Without threading this makes the GUI really
-  # unresponsive, but with threading enabled it displays message after
-  # message and you don't have to wait at all, so hopefully threading will work
-  # in a future version
   def getTwitters(searchTerm)
     # url encoding the searchterm
     searchTerm = CGI::escape(searchTerm)
@@ -53,11 +45,7 @@ Shoes.app(:title => "Twitterfind", :width => 545) do
               end
               
               element.each_element_with_attribute('rel', 'image', 1) do |pic|
-                begin
-                  image pic.attributes['href'] # downloads and displays avatar
-                rescue
-                  # just do nothing, this is to catch 404 errors
-                end
+                image pic.attributes['href'] # downloads and displays avatar
               end
             end
             flow(:width => 440) do
@@ -89,11 +77,8 @@ Shoes.app(:title => "Twitterfind", :width => 545) do
     flow :margin => 20 do
       @searchBox = edit_line
       button "Search" do
-        @content.clear # clearing outside of the thread seems to work better than inside
-        # Threading crashes the app too often, so it's deactivated for now
-        #Thread.start do
-          getTwitters(@searchBox.text)
-        #end
+        @content.clear
+        getTwitters(@searchBox.text)
       end
     end
   end
