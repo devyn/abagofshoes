@@ -10,7 +10,7 @@
 #
 # Status:
 # -------
-# Working, but some features are missing and the RSS feed on gmane.org is limited to 21 items, haven't
+# Working, but the RSS feed on gmane.org is limited to 21 items, haven't
 # found a way around that yet
 
 require 'rexml/document'
@@ -39,8 +39,10 @@ Shoes.app do
     end
     @groups = (groups.values.sort_by { |msgs| msgs.first[:date] }).reverse
     
-    @groups.each do |item|
-      cur = stack(:margin_left => 15, :margin_right => 30, :margin_top => 15) do
+    @remsgs = []
+    
+    @groups.each_with_index do |item, count|
+      stack(:margin_left => 15, :margin_right => 30, :margin_top => 15) do
         background black
         stack do
           background "#464646".."#000000"
@@ -50,31 +52,30 @@ Shoes.app do
           end
           para item[0][:title], :stroke => white
         end
-        opened = false
+        
         click do
-          if !opened
-            opened = true
-            cur.after do
-              item.length.times do |count|
-                stack(:margin_left => 15, :margin_right => 15, :margin_top => 15) do
-                  background white
-                  stack(:margin_left => 15, :margin_right => 15, :margin_top => 15) do
-                    flow do
-                      para item[count][:creator], :stroke => red
-                      para " - "
-                      para item[count][:date], :stroke => orange
-                    end
-                    para item[count][:description]
-                    click do
-                      visit(item[count][:link])
-                    end
-                  end
-                end
+          @remsgs.each do |msg|
+            if msg[:group] == count
+              msg[:stack].toggle
+            end
+          end
+        end
+        
+        item.length.times do |msgcount|
+          @remsgs << {:group => count, :stack => (stack(:margin_left => 15, :margin_right => 15, :margin_top => 15) do
+            background white
+            stack(:margin_left => 15, :margin_right => 15, :margin_top => 15) do
+              flow do
+                para item[msgcount][:creator], :stroke => red
+                para " - "
+                para item[msgcount][:date], :stroke => orange
+              end
+              para item[msgcount][:description]
+              click do
+                visit(item[msgcount][:link])
               end
             end
-          else
-            # I'll have to figure out how to hide the posts again
-          end
+          end).hide }
         end
       end
     end
