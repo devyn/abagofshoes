@@ -22,9 +22,12 @@ As soon as the Shoes packager is working I'll provide pre-packaged versions of a
 
 ## That one Shoe in the bag doesn't work!
 
-At the top of every Shoes app in the bag is a huge chunk of comments. In there you will find a section called "Status", which tells you if the app is in a working state and if so, what doesn't work yet.
+Update: September 18th 2008
+I've not done anything Shoes related for about a month, there where quite some big changes in Shoes so a few of the apps don't work anymore. I'll get back to Shoes some time this week to make the apps work again and to make them use the new Shoes features, especially the now in Shoes included threaded downloading.
 
-If it lies and says it works but it isn't working, then something really is wrong and I'll gladly give you a refund. Oh wait, the bag is free, isn't it? Sorry, you're out of luck then. Be sure to send me your changes when you fix the app though and I'll add them to the bag (if the changes are sane that is, but it's not that hard to be more sane than me).
+Shoes is in constant development and sometimes changes break apps. Another possibility for these apps not working could be that I was too lazy to test them on more than one or two platforms. I do have access to Linux, Windows and Mac OS X, so it's really lazyness :)
+
+Just comment on an app that's not working and I'll look into it. Mention which version of Shoes you are using and which platform you are on.
 
 # Bag contents:
 
