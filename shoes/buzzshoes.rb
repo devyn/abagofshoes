@@ -1,6 +1,15 @@
 # Copyright (C) 2008 Christoph Budzinski
 #
 # Licensed under the MIT license, see LICENSE.txt for more information
+#
+# I wrote this for the 2008 Ruby Advent Calendar (http://advent2008.hackruby.com).
+# There are some great Ruby articles on there, so go take a look!
+#
+# Description:
+# ------------
+# Grabs the most popular topics as talked about on Twitter by using the Tweetag.com API and
+# then uses the YouTube API to find videos of these topics which you can then play from within
+# the application.
 
 Shoes.setup do
   # this tells Shoes to download and install a ruby gem inside Shoes' own
