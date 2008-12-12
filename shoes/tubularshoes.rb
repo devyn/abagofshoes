@@ -30,13 +30,12 @@ Shoes.app(:title => "TubularShoes", :width => 590, :height => 130, :resizable =>
   
   # get the file URL of a youtoube video
   def get_file(page)
-    id = page.split("=")[1]
+    video_id = page.split("=")[1]
     puts "finding url"
     url = nil
-    Net::HTTP.start('youtube.com', 80) do |http|
-      t = http.head("/v/#{id}")['location'].split('&').last
-      url = http.head("http://youtube.com/get_video?video_id=#{id}&#{t}")['location']
-    end
+    page = open("http://www.youtube.com/watch?v=#{video_id}").read
+    t = /, "t": "([^"]+)"/.match(page)[1]
+    url = "http://www.youtube.com/get_video?video_id=#{video_id}&t=#{t}"
     return url
   end
   
