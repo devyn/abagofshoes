@@ -22,14 +22,17 @@ As soon as the Shoes packager is working I'll provide pre-packaged versions of a
 
 ## That one Shoe in the bag doesn't work!
 
-Update: September 18th 2008
-I've not done anything Shoes related for about a month, there where quite some big changes in Shoes so a few of the apps don't work anymore. I'll get back to Shoes some time this week to make the apps work again and to make them use the new Shoes features, especially the now in Shoes included threaded downloading.
-
-Shoes is in constant development and sometimes changes break apps. Another possibility for these apps not working could be that I was too lazy to test them on more than one or two platforms. I do have access to Linux, Windows and Mac OS X, so it's really lazyness :)
+Shoes apps behave differently on Mac OS X, Linux and Windows. Most of the apps are tested only on Mac OS X, so if something doesn't run on Windows or Linux it's a bug in Shoes that should be fixed soon.
 
 Just comment on an app that's not working and I'll look into it. Mention which version of Shoes you are using and which platform you are on.
 
 # Bag contents:
+
+## BuzzShoes
+
+Grabs the most popular topics as talked about on Twitter by using the Tweetag.com API and then uses the YouTube API to find videos of these topics which you can then play from within the application.
+
+[![preview](http://img167.imageshack.us/img167/8094/buzzshoesjy7.th.jpg)](http://img167.imageshack.us/img167/8094/buzzshoesjy7.jpg)
 
 ## Chatlog Viewer
 
