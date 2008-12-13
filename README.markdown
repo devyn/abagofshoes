@@ -56,6 +56,12 @@ Helper utility for developing AIR(+HTML/CSS/JavaScript) apps
 
 [![preview](http://img.skitch.com/20080714-brr5b6x44n5mnu9shxxu83n3pb.preview.png)](http://img.skitch.com/20080714-brr5b6x44n5mnu9shxxu83n3pb.png)
 
+## Menu
+
+A menu for all the apps in the Bag of Shoes. You can start all the apps from within the menu which is pretty handy. This was the first little Shoes app someone else contributed to the bag. I modified the design but everything else was done by [Devyn](http://github.com/devyn).
+
+[![preview](http://img261.imageshack.us/img261/8019/menupr2.th.png)](http://img261.imageshack.us/img261/8019/menupr2.png)
+
 ## Picture Guess
 
 A game where a random word is sent to Flickr and you get a bunch of pictures displayed, which are tagged with the random word. You then have to guess what the word used was.
